@@ -1,10 +1,12 @@
 var colors=generateColors(6);
 var squares=document.querySelectorAll(".square");
 var pickedColor=pickColor();
-var picked=document.querySelector("h1 span");
+var picked=document.querySelector("#col");
 picked.innerHTML=pickedColor;
 var picked1=document.querySelector("h1");
 var messageDisplay=document.querySelector("#textDisplay");
+var resetButton=document.querySelector("#play");
+resetButton.addEventListener("click",reset);
 for(var i=0;i<squares.length;i++)
 {
     //adding initial colors
@@ -22,12 +24,14 @@ for(var i=0;i<squares.length;i++)
         }
         picked1.style.backgroundColor=pickedColor;
         messageDisplay.textContent="Correct";
+        play.innerHTML="Play Again?";
         }
         else
         {
             this.style.backgroundColor="black"
             //    alert("wrong");
             messageDisplay.textContent="Try Again";
+            play.innerHTML="New Colors";
         }
     });
 }
@@ -57,6 +61,17 @@ function randomColor()
 	//pick a "blue" from 0 - 255
 	var b = Math.floor(Math.random() * 256);
 	return "rgb(" + r + ", " + g + ", " + b + ")";
+}
+function reset()
+{
+    colors=generateColors(6);
+    pickedColor=pickColor();
+    picked.textContent=pickedColor;
+    picked1.style.backgroundColor="blue";
+    for(var i=0;i<squares.length;i++)
+{
+    squares[i].style.backgroundColor=colors[i];
+}
 }
 
 
