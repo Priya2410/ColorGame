@@ -1,9 +1,4 @@
-var colors=["rgb(117, 77, 176)",
-            "rgb(122, 145, 230)",
-            "rgb(189, 122, 230)",
-            "rgb(230, 122, 122)",
-            "rgb(208, 230, 122)",
-            "rgb(77, 176, 92)"];
+var colors=generateColors(6);
 var squares=document.querySelectorAll(".square");
 var pickedColor=pickColor();
 var picked=document.querySelector("h1 span");
@@ -36,10 +31,32 @@ for(var i=0;i<squares.length;i++)
         }
     });
 }
-function pickColor(){
+function pickColor()
+{
     //In order to generate the random index in the array
     var index=Math.floor(Math.random()*colors.length);
     return(colors[index]);
-
 }
+function generateColors(num)
+{
+    var arr=[];
+    for(var i=0;i<num;i++)
+    {
+        arr.push(randomColor());
+    }
+    return arr;
+}
+//Generating Random Colors
+function randomColor()
+{
+    
+    	//pick a "red" from 0 - 255
+	var r = Math.floor(Math.random() * 256);
+	//pick a "green" from 0 - 255
+	var g = Math.floor(Math.random() * 256);
+	//pick a "blue" from 0 - 255
+	var b = Math.floor(Math.random() * 256);
+	return "rgb(" + r + ", " + g + ", " + b + ")";
+}
+
 
