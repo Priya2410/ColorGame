@@ -1,0 +1,23 @@
+body{
+    background-color: black;
+}
+h1{
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: blue;
+    color:white;
+    text-transform: uppercase;
+}
+#container{
+    width:80%;
+    margin:0 auto;
+}
+.square{
+    display:inline-block;
+    width:30%;
+    background: purple;
+    padding-bottom: 30%;
+    float:left;
+    margin:1.66%;
+    border-radius:10%;
+}
