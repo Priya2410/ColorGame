@@ -1,6 +1,6 @@
-var colors=generateColors(6);
-var squares=document.querySelectorAll(".square");
-var pickedColor=pickColor();
+var colors=generateColors(6); //Array of the colors we require on the screen-generates random colors;
+var squares=document.querySelectorAll(".square");//Display of the squares used to assign a color to each square
+var pickedColor=pickColor();//used to pick a random color from the collection of 3/6 colors.
 var picked=document.querySelector("#col");
 picked.innerHTML=pickedColor;
 var picked1=document.querySelector("h1");
@@ -10,6 +10,7 @@ resetButton.addEventListener("click",reset);
 var easy=document.querySelector("#easy");
 var hard=document.querySelector("#hard");
 var numSquares=6;
+//Used to add 6 colors
  hard.addEventListener("click",function()
  {
     hard.classList.add("selected");
@@ -24,7 +25,7 @@ var numSquares=6;
     }
     numSquares=6;
  });
-
+//Used to add 3 colors
 easy.addEventListener("click",function()
 {
     hard.classList.remove("selected");
@@ -73,6 +74,7 @@ for(var i=0;i<squares.length;i++)
         }
     });
 }
+//Used to generate one color from the random colors
 function pickColor()
 {
     //In order to generate the random index in the array
@@ -100,6 +102,7 @@ function randomColor()
 	var b = Math.floor(Math.random() * 256);
 	return "rgb(" + r + ", " + g + ", " + b + ")";
 }
+//used to reset the colors
 function reset()
 {
     colors=generateColors(numSquares);
