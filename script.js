@@ -22,7 +22,7 @@ var numSquares=6;
         squares[i].style.backgroundColor=colors[i];
         squares[i].style.display="inline-block";
     }
-
+    numSquares=6;
  });
 
 easy.addEventListener("click",function()
@@ -57,14 +57,18 @@ for(var i=0;i<squares.length;i++)
         squares[i].style.backgroundColor=pickedColor;
         }
         picked1.style.backgroundColor=pickedColor;
+        messageDisplay.style.display="inline";
         messageDisplay.textContent="Correct";
+        // messageDisplay.classList.add("style");
         play.innerHTML="Play Again?";
         }
         else
         {
             this.style.backgroundColor="black"
             //    alert("wrong");
+            messageDisplay.style.display="inline";
             messageDisplay.textContent="Try Again";
+            // messageDisplay.classList.add("style");
             play.innerHTML="New Colors";
         }
     });
@@ -101,11 +105,12 @@ function reset()
     colors=generateColors(numSquares);
     pickedColor=pickColor();
     picked.textContent=pickedColor;
-    picked1.style.backgroundColor="blue";
+    picked1.style.backgroundColor="#7ac6ff";
     for(var i=0;i<squares.length;i++)
-{
+    {
     squares[i].style.backgroundColor=colors[i];
-}
+    }   
+    messageDisplay.style.display="none"
 }
 
 
