@@ -14,7 +14,6 @@ h1{
     margin:0 auto;
 }
 .square{
-    display:inline-block;
     width:30%;
     background: purple;
     padding-bottom: 30%;
@@ -42,4 +41,8 @@ div span{
     height:30px;
     text-align: center;
     padding-top:2%;
+}
+.selected{
+    background-color: blue;
+    color: white;
 }

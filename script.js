@@ -7,6 +7,40 @@ var picked1=document.querySelector("h1");
 var messageDisplay=document.querySelector("#textDisplay");
 var resetButton=document.querySelector("#play");
 resetButton.addEventListener("click",reset);
+var easy=document.querySelector("#easy");
+var hard=document.querySelector("#hard");
+var numSquares=6;
+ hard.addEventListener("click",function()
+ {
+    hard.classList.add("selected");
+    easy.classList.remove("selected");
+    colors=generateColors(6);
+    pickedColor=pickColor();
+    picked.innerHTML=pickedColor;
+    for(var i=0;i<squares.length;i++)
+    {
+        squares[i].style.backgroundColor=colors[i];
+        squares[i].style.display="inline-block";
+    }
+
+ });
+
+easy.addEventListener("click",function()
+{
+    hard.classList.remove("selected");
+    easy.classList.add("selected");
+    colors=generateColors(3);
+    pickedColor=pickColor();
+    picked.innerHTML=pickedColor;
+    for(var i=0;i<squares.length;i++)
+    {
+        if(colors[i])
+        squares[i].style.backgroundColor=colors[i];
+        else
+        squares[i].style.display="none";
+    }
+    numSquares=3;
+});
 for(var i=0;i<squares.length;i++)
 {
     //adding initial colors
@@ -64,7 +98,7 @@ function randomColor()
 }
 function reset()
 {
-    colors=generateColors(6);
+    colors=generateColors(numSquares);
     pickedColor=pickColor();
     picked.textContent=pickedColor;
     picked1.style.backgroundColor="blue";
